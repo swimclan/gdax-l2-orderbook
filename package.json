@@ -1,0 +1,31 @@
+{
+  "name": "gdax-l2-orderbook",
+  "version": "0.0.1",
+  "description": "A simple Level 2 orderbook implementation with event driven changes for realtime analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "babel-node index.js --presets @babel/preset-env"
+  },
+  "keywords": [
+    "gdax",
+    "coinbase",
+    "pro",
+    "cryptocurrencies",
+    "orderbook",
+    "level2",
+    "bitcoin",
+    "ethereum"
+  ],
+  "author": "Matthew Herron",
+  "license": "ISC",
+  "dependencies": {
+    "gdax": "^0.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "jest": "^24.1.0"
+  }
+}
