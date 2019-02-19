@@ -9,3 +9,7 @@ All notable changes to this project will be documented in this file.
 - Orderbook event emission
 - Linked list create and update
 - GDAX Websocket integration
+
+## [1.0.1] - 2019-02-18
+### Feature
+- Added github repo info to package-json

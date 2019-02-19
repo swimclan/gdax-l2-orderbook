@@ -1,11 +1,15 @@
 {
   "name": "gdax-l2-orderbook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Level 2 orderbook implementation with event driven changes for realtime analysis",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "start": "babel-node index.js --presets @babel/preset-env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/swimclan/gdax-l2-orderbook.git"
   },
   "keywords": [
     "gdax",
@@ -19,6 +23,10 @@
   ],
   "author": "Matthew Herron",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swimclan/gdax-l2-orderbook/issues"
+  },
+  "homepage": "https://github.com/swimclan/gdax-l2-orderbook#readme",
   "dependencies": {
     "gdax": "^0.8.0"
   },
