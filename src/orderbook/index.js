@@ -24,12 +24,7 @@ class Orderbook extends EventEmitter {
   }
 
   start() {
-    this.websocket = new WebsocketClient(
-      [this.product],
-      this.sandbox ? GDAX_SANDBOX_WEBSOCKET_URL : GDAX_PRODUCTION_WEBSOCKET_URL,
-      null,
-      { channels: ['level2'] }
-    );
+    this._initSocket();
     this._start();
   }
 
@@ -41,6 +36,33 @@ class Orderbook extends EventEmitter {
     setInterval(() => {
       console.log('Bids:', this.bids.value, 'Asks:', this.asks.value);
     }, interval);
+  }
+
+  _initSocket(_handlers=null) {
+    this.websocket = new WebsocketClient(
+      [this.product],
+      this.sandbox ? GDAX_SANDBOX_WEBSOCKET_URL : GDAX_PRODUCTION_WEBSOCKET_URL,
+      null,
+      { channels: ['level2'] }
+    );
+    if (_handlers) {
+      this.websocket._events = _handlers;
+    } else {
+      this.websocket.on('error', (err) => {
+        console.log(typeof err === 'object' ? JSON.stringify(err) : err);
+        this._resetSocket();
+      });
+    }
+  }
+
+  _resetSocket() {
+    if (this.websocket) {
+      const _handlers = this.websocket._events;
+      this.websocket.removeAllListeners();
+      this.websocket.socket && this.websocket.socket.close();
+      this.websocket = null;
+      this._initSocket(_handlers);
+    }
   }
 
   _start() {
