@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
+## [1.0.3] - 2019-03-02
+### Feature
+- Updated error logging
+
 ## [1.0.2] - 2019-02-24
 ### Fix
 - Websocket connecton keep-alive on error
