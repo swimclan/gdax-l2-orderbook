@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
+## [1.0.4] - 2019-03-06
+### Feature
+- Updated error logging
+
 ## [1.0.3] - 2019-03-02
 ### Feature
 - Updated error logging

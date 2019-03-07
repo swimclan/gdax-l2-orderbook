@@ -49,7 +49,9 @@ class Orderbook extends EventEmitter {
       this.websocket._events = _handlers;
     } else {
       this.websocket.on('error', (error) => {
-        console.error(`gdax-l2-orderbook - ${typeof error === 'object' ? JSON.stringify(error) : error}`);
+        const message = `gdax-l2-orderbook - ${typeof error === 'object' ? JSON.stringify(error) : error}`;
+        console.error(message);
+        this.emit('error', message)
         this._resetSocket();
       });
     }
