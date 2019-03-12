@@ -46,13 +46,19 @@ class Orderbook extends EventEmitter {
       { channels: ['level2'] }
     );
     if (_handlers) {
-      this.websocket._events = _handlers;
+      Object.entries(_handlers).forEach(([type, handler]) => {
+        if (Array.isArray(handler)) {
+          handler.forEach(fn => {
+            this.websocket.on(type, fn);
+          });
+        } else {
+          this.websocket.on(type, handler);
+        }
+      });
     } else {
-      this.websocket.on('error', (error) => {
-        const message = `gdax-l2-orderbook - ${typeof error === 'object' ? JSON.stringify(error) : error}`;
-        console.error(message);
-        this.emit('error', message)
-        this._resetSocket();
+      this.websocket.on('error', (err) => {
+        this.emit('error', err);
+        this._resetWebsocket(products);
       });
     }
   }
