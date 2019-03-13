@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
+## [1.0.6] - 2019-03-12
+### Fix
+- Fixed socket reset bug
+
 ## [1.0.5] - 2019-03-11
 ### Fix
 - Updated socket reconnect event reassignment

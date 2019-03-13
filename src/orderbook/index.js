@@ -58,12 +58,12 @@ class Orderbook extends EventEmitter {
     } else {
       this.websocket.on('error', (err) => {
         this.emit('error', err);
-        this._resetWebsocket(products);
+        this._resetWebsocket();
       });
     }
   }
 
-  _resetSocket() {
+  _resetWebSocket() {
     if (this.websocket) {
       const _handlers = this.websocket._events;
       this.websocket.removeAllListeners();
