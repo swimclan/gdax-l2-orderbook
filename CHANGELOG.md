@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
+## [1.0.7] - 2019-03-15
+### Fix
+- Fix another socket reset bug
+
 ## [1.0.6] - 2019-03-12
 ### Fix
 - Fixed socket reset bug

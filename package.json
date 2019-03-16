@@ -1,6 +1,6 @@
 {
   "name": "gdax-l2-orderbook",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple Level 2 orderbook implementation with event driven changes for realtime analysis",
   "main": "index.js",
   "scripts": {
