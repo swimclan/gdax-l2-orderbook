@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
+## [1.0.8] - 2019-04-03
+### Feature
+- More robust socket keep alive logic
+
 ## [1.0.7] - 2019-03-15
 ### Fix
 - Fix another socket reset bug

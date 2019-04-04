@@ -70,6 +70,8 @@ class Orderbook extends EventEmitter {
       this.websocket.socket && this.websocket.socket.close();
       this.websocket = null;
       this._initSocket(_handlers);
+    } else {
+      this._initSocket();
     }
   }
 
